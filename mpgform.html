@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gallons per liter calculator</title>
+
+<script>
+function calcMPG()
+{
+var startMiles = document.forms[0].startingMileage.value;
+var endMiles = document.forms[0].endingMileage.value;
+var gallons = document.forms[0].gallonsUsed.value;
+if(isNaN(startMiles) || isNaN(endMiles) || isNaN(gallons))
+{ window.alert("Each textbox must contain only numbers!");}
+else
+{if(gallons > 0) {
+document.forms[0].milesPerGallon.value = ((endMiles - startMiles)/gallons).toFixed(1);
+}
+}
+}
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+document.write("<p><h2>Miles Per Gallon Calculator</h2></p>");
+document.write("<p><h5>To find miles per gallon, enter starting and ending mileage and gallons of gas used. </h5></p>");
+
+</script>
+<form action ="">
+
+<p>Starting Miles:
+<input type = "text" name = "startingMileage" value = "0" size = "10" onchange = "calcMPG()" /></p>
+<p>Ending Miles:
+<input type = "text" name = "endingMileage" value = "0" size = "10" onchange = "calcMPG()" /></p>
+<p>Gallons Used:
+<input type = "text" name = "gallonsUsed" value = "0" size = "10" onchange = "calcMPG()" /></p>
+<p>Miles Per Gallon:
+<input type = "text" name = "milesPerGallon" value = "0" size = "10" /></p>
+
+</form>
+
+</body>
+</html>

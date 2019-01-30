@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Discount Calculation</title>
+
+<script type="text/javascript">
+/* Input: Customer's subtotal
+ * Processing: Apply 10% discount if subtotal is greater than $50 and
+ * current day is Tuesday or Wednesday.
+ * Calculate total by adding 6% sales tax to subtotal  
+ * Output: Total amount due
+ */
+function checkDiscount() {
+    var subtotal = parseFloat(document.getElementById('subtotal').value);
+    var total;
+    var discount;
+    var dayOfWeek = new Date().getDay();
+    if (subtotal > 50 && (dayOfWeek == 2 || dayOfWeek == 3)) {
+      discount = subtotal * 0.1;
+      subtotal -= discount; 
+      total = 1.06 * subtotal;
+    }
+    else {
+      total = subtotal * 1.06
+    }
+    document.getElementById('outputDiv').innerHTML = "Customer total: $" + total.toFixed(2);
+}
+</script>
+</head>
+
+  <body>
+<h1>Check for discount and display total</h1>
+Customer subtotal:
+    <input type="text" id="subtotal" size="4">  
+<button type="button" onclick="checkDiscount()">Apply Discount</button>  
+<div id="outputDiv"></div>  
+
+  </body>
+</html>

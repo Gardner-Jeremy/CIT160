@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Distance</title>
+
+<script type="text/javascript">
+/* Input: beginning and ending milage, gallons consumed
+ * Processing: Calculate the distance traveled and fuel efficiency (miles per gallon).
+ * Output: Miles per gallon (MPG)
+ */
+function distance() {
+    // Get the beginning and ending odometer readings from the user.
+    var beginMileage = parseFloat(document.getElementById('beginInputBox').value);
+    var endMileage = parseFloat(document.getElementById('endInputBox').value);
+    
+    // Get the gallons of gasoline used
+    var gallons = parseFloat(document.getElementById('gasInputBox').value);
+    
+
+    // Compute the distance traveled.
+    var distance = endMileage - beginMileage;
+    
+    // Compute miles per gallon
+    var mpg = distance / gallons;
+
+    // Round the miles per gallon to two digits after the decimal.
+    mpg = Math.round(mpg * 100) / 100;
+    
+    // Display the distance to the user.
+    document.getElementById('outputDiv').innerHTML = "Your fuel efficiency is " + mpg + " miles per gallon.";
+}
+</script>
+</head>
+
+<body>
+Please enter the beginning and ending odometer readings:<br>
+Beginning odometer reading (in miles): <input type="text" id="beginInputBox" size="5"><br>  
+Ending odometer reading (in miles): <input type="text" id="endInputBox" size="5"><br>  
+Enter the number of gallons of gas consumed: <input type="text" id="gasInputBox" size="3"><br>  
+<button type="button" onclick="distance()">Calculate MPG</button>  
+<div id="outputDiv"></div>  
+</body>
+</html>

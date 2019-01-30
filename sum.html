@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Odd Sums</title>
+
+<script type="text/javascript">
+/* Input: Integer from user
+ * Processing: Sum of all odd numbers from 1 to n inclusive, where n is input from user
+ * Output: Total sum of numbers
+ */
+function numberSums() {
+    var input = parseInt(document.getElementById('number').value);
+    var sum = 0;
+    for (var i=1; i <= input; i+=2) {
+      sum += i;
+    }
+    document.getElementById('outputDiv').innerHTML = sum;
+}
+</script>
+</head>
+
+<body>
+Enter an integer (whole number):
+    <input type="text" id="number" size="3"><br>
+    Click the button below and it will add together all odd numbers less than the number entered.<br>   
+<button type="button" onclick="numberSums()">ADD!</button>  
+<div id="outputDiv"></div>  
+</body>
+</html>

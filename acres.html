@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>How Many Acres?</title>
+<script type="text/javascript">
+/* Input: width and length
+ * Processing: calculate the acres
+ * Output: total acres
+ */
+function computeSize() {
+  
+  var w = parseFloat(document.getElementById('width').value);
+  var l = parseFloat(document.getElementById('length').value);
+  var acre = (w * l) / 43560
+  
+  // Round the acres to two digits after the decimal.
+  acre = Math.round(acre * 100) / 100;
+    
+  // Display the distance to the user.
+  document.getElementById('acres').innerHTML = "Your property is " + acre + " acres.";
+}
+</script>
+</head>
+
+<body>
+    <h1>How Many Acres?</h1>
+    Width (feet) <input type="text" id="width"><br>
+    Length (feet) <input type="text" id="length"><br>
+    <button type="button" onclick="computeSize()">Acres</button><br>
+    Size (acres) <div id="acres"></div>
+</body>
+</html>

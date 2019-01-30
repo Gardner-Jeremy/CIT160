@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>integer sum calculator</title>
+<script type="text/javascript">
+/*
+* Input: an array
+* Processing: add first and last element of the array
+* Output: sum of first and last array elements
+*/
+
+function addEnds(list) {
+  var x = list[0];
+  var y = list.length -1;
+  var z = list[y];
+  return x + z;
+}
+
+/*
+* Input: an array
+* Processing: locate the middle element, if an even number of elements, calculate the average of the two middle elements
+* Output: middle element or average of middle elements (if array length even)
+*/
+function getMiddle(list) {
+  var x = list.length / 2;
+  var y = x - 1;
+  var a = Math.floor(x);
+  var b = Math.ceil(x);
+  if (a != b) {
+    return list[a];
+  } 
+  else {
+    return (list[y] + list[x]) / 2;
+  }
+}
+function testAdd() {
+  var numbers = [1,22,35,47,59];
+  var sum = addEnds(numbers);
+  document.getElementById('output').innerHTML = sum;
+}
+function testMid() {
+  var numbers = [1,22,35,47,59,27];
+  var middle = getMiddle(numbers);
+  document.getElementById('output').innerHTML = middle;
+}
+</script>
+</head>
+
+<body>
+<h1>Calculate the sum of the first and last elements of an array</h1>
+<button type="button" onclick="testAdd()">calculate</button>
+<h1>Display the middle element or average of two middle elements (if array length is even)</h1>
+<button type="button" onclick="testMid()">middle</button>
+
+<div id="output"></div>
+</body>
+</html>

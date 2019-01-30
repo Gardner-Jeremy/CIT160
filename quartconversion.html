@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>A Program to convert volume from quarts to liters</title>
+<script type="text/javascript">
+/* Defining Table
+* Input: Volume in quarts
+* Processing: Convert quarts to liters
+* Output: Volume in liters
+*/
+function convertVolume() {
+// Liters per 1 quart
+var lpq = 0.946;
+
+// Get volume in quarts
+var quarts = parseFloat(document.getElementById('volQuarts').value);
+
+// Convert quarts into liters
+var liters = quarts * lpq;
+document.getElementById('volume').innerHTML = "You have " + liters + " liters";
+
+}
+</script>
+</head>
+
+<body>
+How many quarts do you have?
+<input type="text" id="volQuarts" size="3"><br>
+<button type="button" onclick="convertVolume()">Convert!</button>
+<div id="volume"></div>
+</body>
+</html>

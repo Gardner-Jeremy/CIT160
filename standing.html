@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Student Class Standing</title>
+
+<script type="text/javascript">
+/* Input: Student's name and completed credits
+ * Processing: Determine what year a student is in school
+ * Output: "Freshman", "Sophomore", "Junior", or "Senior"
+ */
+function checkYear() {
+    var student = document.getElementById('studentBox').value;
+    var credits = parseInt(document.getElementById('creditBox').value);
+
+    var standing;
+    if (credits < 30 ) {
+        standing = "Freshman";
+    }
+    else if (credits < 60) {
+        standing = "Sophomore";
+    }
+    else if (credits < 90) {
+        standing = "Junior";
+    }
+    else {
+        standing = "Senior";
+    }
+    document.getElementById('outputDiv').innerHTML = student + " is a " + standing;
+}
+</script>
+</head>
+
+<body>
+<h1>What year in school are you?</h1>
+Student's name:
+    <input type="text" id="studentBox" size="3"><br>  
+Credits completed:
+    <input type="text" id="creditBox" size="3"><br>  
+<button type="button" onclick="checkYear()">Check Status</button>  
+<div id="outputDiv"></div>  
+</body>
+</html>

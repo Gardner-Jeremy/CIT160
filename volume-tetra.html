@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Volume of a Tetrahedron</title>
+<script type="text/javascript">
+/* Input: length of one side
+ * Processing: calculate volume (length of side cubed, divided by 6 times square root of 2)
+ * Output: total volume
+ */   
+function computeVolume() {
+   // Length of a side
+   var l = parseFloat(document.getElementById('length').value);
+   
+   // Volume of tetrahedron
+   var v = (l * l * l) / (6 * Math.sqrt(2));
+
+   // Round the volume to two digits after the decimal.
+  v = Math.round(v * 100) / 100;
+    
+  // Display the distance to the user.
+  document.getElementById('volume').innerHTML = v;
+  
+}
+</script>
+</head>
+
+<body>
+    <h1>Volume of a Tetrahedron</h1>
+    Side Length <input type="text" id="length"><br>
+    <button type="button" onclick="computeVolume()">Volume</button><br>
+    Total volume <div id="volume"></div>
+</body>
+</html>
